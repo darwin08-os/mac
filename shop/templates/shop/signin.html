@@ -1,0 +1,63 @@
+{% extends 'shop/basic.html'%}
+
+<!-- {%block style%}
+<style>
+    .form-div{
+            position: absolute;
+            top: 150px;
+            left:600px;
+        }
+</style>
+{%endblock%} -->
+
+{%block container%}
+    {% load static %}
+    <div class="container">
+        <form>
+            
+        <div class="form-row">
+            <div class="col-md-5">
+
+                <label for="validationDefaultUsername">Username</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroupPrepend2">@</span>
+                    </div>
+                    <input type="text" class="form-control" id="validationDefaultUsername" placeholder="Username" aria-describedby="inputGroupPrepend2" required>
+                </div>
+            </div>
+            </div>
+            <div class="form-row">
+
+                <div class="col-md-5">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="pass1" placeholder="password" required>
+                </div>
+                <div class="showbtn" style="padding-top: 32px;">
+                    <img src="{%static 'shop/image/eye-open.png' %}" width="56px" height="40px" class="btn" id="showpass" >
+                </div>
+            </div>
+           
+            <br>
+        
+        <button class="btn btn-primary" type="submit">signin</button>
+    </form>
+</div>
+    {%endblock%}
+    
+    {%block script%}
+    <script>
+            document.getElementById("showpass").addEventListener('click',function(event){
+                event.preventDefault()
+                if(document.getElementById('confirm_pass').getAttribute('type') == 'password'){
+                    document.getElementById('confirm_pass').setAttribute('type','text')
+                    document.getElementById("showpass").setAttribute("src","{%static 'shop/image/eye-close.png'%}") 
+                }
+                else{
+                    document.getElementById('confirm_pass').setAttribute('type','password')
+                    document.getElementById("showpass").setAttribute("src","{%static 'shop/image/eye-open.png'%}") 
+                }
+                
+            })
+        </script>
+{%endblock%}

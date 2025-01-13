@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header {
+    padding-left: 50px;
+    height: 60px;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+}
+
+header nav {
+width: 700px;
+display: flex;
+align-items: center;
+justify-content: space-evenly;
+list-style-type: none;
+}
+header nav a{
+    color: white;
+    margin: 0 10px;
+}
+.acc a{
+    color: white;
+    width: 130px;
+    margin: 0 10px; 
+    
+}
+
+header nav a:hover{
+    color: rgb(255, 0, 195);
+    cursor: pointer;
+    text-decoration: none;
+}
+header .acc a:hover{
+    color: rgb(255, 0, 195);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+
