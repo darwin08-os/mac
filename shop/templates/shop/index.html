@@ -127,10 +127,6 @@
   {%endfor%}
 </div>
 {%endblock%}
-
-
-
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -156,36 +152,30 @@
     {% block js %}
     <script>
     // this needs to be pasted in basic.html 
-       
-
       if(localStorage.getItem('cart') == null){
         let cart = {};
       }
       else{
         cart = JSON.parse(localStorage.getItem('cart'))
         document.getElementById("cart").innerHTML = Object.keys(cart).length
-
-
       }
+
       $('.cart').click(function(){
         var idstr = this.id.toString();
-        
         if(cart[idstr] != undefined){
           cart[idstr] += 1
         }
         else{
           cart[idstr] = 1
         }
-
+        
         //to get values cart.idstr
        
       });
-      document.getElementById("cartpop").setAttribute("data-content","<a class='btn' id='cartclear'>Clear</a>");
-
         localStorage.setItem('cart', JSON.stringify(cart))
         document.getElementById("cart").innerHTML = Object.keys(cart).length
        
-      document.getElementById("cartpop").setAttribute("data-content","<a class='btn' id='cartclear'>Clear</a>")
+      
 
 
       $('#cartpop').popover()
@@ -194,8 +184,6 @@
           localStorage.clear();
           let cart = {};  
           $('#cart').html(Object.keys(cart).length);
-
-
       });
 
       
