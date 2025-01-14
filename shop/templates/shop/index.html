@@ -151,6 +151,15 @@
 
     {% block js %}
     <script>
+      var totalItem = 0;
+      let updateCart =()=>{
+        totalItem = 0;
+        for(let i in cart){
+          totalItem += cart[i];
+        }
+        document.getElementById("cart").innerText = totalItem;
+      }
+      updateCart();
     // this needs to be pasted in basic.html 
       if(localStorage.getItem('cart') == null){
         let cart = {};
@@ -168,8 +177,9 @@
         else{
           cart[idstr] = 1
         }
-        
-        //to get values cart.idstr
+        updateCart();
+       
+        //to get values cart.idstr <-- just for knowledge
        
       });
         localStorage.setItem('cart', JSON.stringify(cart))
